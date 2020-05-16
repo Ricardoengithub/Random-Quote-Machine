@@ -1,14 +1,11 @@
-import React, { useContext} from 'react';
-import './App.css';
-import ThemeContext from './ThemeContext';
-import Home from './Home';
+import React, { useContext } from "react";
+import "./App.css";
+import ThemeContext from "./ThemeContext";
+import Home from "./Home";
 
 const App = () => {
+  const data = useContext(ThemeContext);
 
-  const data = useContext(ThemeContext)
-
-  return(
-      <Home data={data}/>
-  )
-}
+  return <Home data={data} />;
+};
 export default App;
