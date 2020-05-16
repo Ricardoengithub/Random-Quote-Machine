@@ -12,10 +12,12 @@ class Home extends React.Component{
             quote: props.data.quotes[0].quote,
             author: props.data.quotes[0].author,
             current: 0,
-            link: 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text='+'"'+ props.data.quotes[0].quote + '"' + props.data.quotes[0].author
+            // eslint-disable-next-line
+            link: 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + '"' + props.data.quotes[0].quote + '"' + props.data.quotes[0].author
         }
         this.handleClick = this.handleClick.bind(this)
-        this.colors = ["#baffc9", "#bae1ff", "#6B5B95", "#88B04B", "#FFDAC1", "#E2F0CB", "#B5EAd7", "#C7CEEA", '#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#BDBB99", "#77B1A9", "#73A857"]
+        this.colors = ["#baffc9", "#bae1ff", "#6B5B95", "#88B04B", "#FFDAC1", "#E2F0CB", "#B5EAd7", "#C7CEEA", '#16a085', '#27ae60', 
+                        '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#BDBB99", "#77B1A9", "#73A857"]
     }
 
     handleClick(e){
@@ -30,6 +32,7 @@ class Home extends React.Component{
             quote: this.props.data.quotes[x].quote,
             author: this.props.data.quotes[x].author,
             current: x,
+            // eslint-disable-next-line
             link: 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + '"' + this.props.data.quotes[x].quote + '" ' + this.props.data.quotes[x].author 
         })
     }
@@ -50,9 +53,7 @@ class Home extends React.Component{
                         <a href={this.state.link}>
                             <FaTwitter className="twitter"/>
                         </a>
-                        <a onClick={e => this.handleClick(e)}>
-                            <FaArrowRight className="arrow" />
-                        </a>
+                        <FaArrowRight className="arrow"  onClick={e => this.handleClick(e)}/>
                     </div>
                 </div>
             </div>
