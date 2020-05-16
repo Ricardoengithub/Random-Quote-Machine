@@ -1,0 +1,40 @@
+.centered{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    min-width: 400px;
+    max-width: 50%;
+}
+blockquote{
+    background-color: white;
+    padding: 5%;
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+footer{
+    text-align: end;
+}
+
+.buttons{
+    margin: 15px 0;
+}
+.twitter {
+    color: rgb(5, 184, 255);
+    background-color: transparent;
+    transform: scale(1.5);
+}
+.twitter:hover {
+    transform: scale(2);
+}
+.arrow {
+    float: right;
+    color: black;
+    background-color: transparent;
+    transform: scale(1.5);
+}
+.arrow:hover {
+    transform: scale(2);
+}
