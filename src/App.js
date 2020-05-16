@@ -8,7 +8,7 @@ const App = () => {
   const data = useContext(ThemeContext)
 
   return(
-      <Home props={data}/>
+      <Home data={data}/>
   )
 }
 export default App;

@@ -1,15 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ThemeContext from './ThemeContext';
 
 
 
 class Home extends React.Component{
     constructor(props){
-        console.log(props.props.quotes[0])
         super(props)
         this.state = {
-            quote: props.props.quotes[0].quote,
-            author: props.props.quotes[0].author,
+            quote: props.data.quotes[0].quote,
+            author: props.data.quotes[0].author,
             current: 0
         }
         this.handleClick = this.handleClick.bind(this)
@@ -17,18 +16,17 @@ class Home extends React.Component{
 
     handleClick(e){
         var x = Math.floor(Math.random()*102);
-        while (x == this.current) { 
-            var x = Math.floor(Math.random()*102);
+        while (x === this.current) { 
+            x = Math.floor(Math.random()*102);
         }
 
         this.setState({
-            quote: this.props.props.quotes[x].quote,
-            author: this.props.props.quotes[x].author,
+            quote: this.props.data.quotes[x].quote,
+            author: this.props.data.quotes[x].author,
             current: x
         })
     }
 
-    static contextType = ThemeContext
     render() {
         return(
             <div>
